@@ -20,7 +20,7 @@ namespace WebAppCachingDemo.Utilities
 
             if (result == null)
             {
-                // load data for cache, this could be a WebAPI or WCFService call
+                // load data for the cache; this could be a WebAPI or WCFService call
                 result = new List<Widget>()
                 {
                     new Widget()
@@ -46,7 +46,7 @@ namespace WebAppCachingDemo.Utilities
                     }
                 };
 
-                // add the data to the cache, in this demo we just cache data for 20 minutes
+                // add the data to the cache, in this demo we hardcode the cache to hold the data for 20 minutes
                 _memoryCache.Set(CacheKeyWidgets, result, new MemoryCacheEntryOptions()
                 {
                     AbsoluteExpiration = DateTime.UtcNow.AddMinutes(20)
