@@ -1,0 +1,29 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Widgets";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Widgets</h1>
+</div>
+
+<div>
+    <table class="table">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col" class="text-end">Cost</th>
+        </tr>
+        @foreach (var widget in Model.Widgets)
+        {
+            <tr>
+                <td>@widget.Id</td>
+                <td>@widget.Name</td>
+                <td>@widget.Description</td>
+                <td class="text-end">$@widget.Price.ToString("N2")</td>
+            </tr>
+        }
+    </table>
+</div>
